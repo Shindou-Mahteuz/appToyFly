@@ -2,6 +2,8 @@ import { React, useState } from 'react';
 import { Text, TouchableOpacity, View, TextInput, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
+import Menu from './Menu';
+import Nav from './Nav';
 
 function Home({ navigation }) {
 
@@ -30,7 +32,9 @@ function Home({ navigation }) {
 
     return (
         <View style={styles.container}>
+            <Nav></Nav>
             <Text>Bem vindo ao jogo</Text>
+            <Menu></Menu>
         </View>
     );
 }
