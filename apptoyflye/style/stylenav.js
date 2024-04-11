@@ -16,12 +16,12 @@ export default StyleSheet.create({
     },
     viewiconnav: {
         position: 'absolute',
-        top: 55,
-        left: 30,
+        top: 50,
+        left: 15,
     },
     iconnav: {
-        width: 38,
-        height: 38,
+        width: 45,
+        height: 45,
     },
     viewlogonav: {
         top: 10,

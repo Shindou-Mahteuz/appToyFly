@@ -16,7 +16,7 @@ function Menu() {
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <Image source={require('./assets/iconcar.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                 <Image source={require('./assets/iconuser.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>
         </View>
