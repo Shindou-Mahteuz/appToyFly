@@ -1,13 +1,14 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Sanduiche from './Sanduiche';
 import * as SplashScreen from 'expo-splash-screen';
+import 'react-native-gesture-handler';
 
 SplashScreen.preventAutoHideAsync();
 setTimeout(SplashScreen.hideAsync, 3000);
 
 function App() {
   return (
-    <Navigation />
+    <Sanduiche />
   );
 }
 

@@ -7,7 +7,7 @@ function Nav() {
     const navigation = useNavigation();
     return (
         <View style={estilonav.nav}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={estilonav.viewiconnav}>
+            <TouchableOpacity onPress={() => navigation.openDrawer()} style={estilonav.viewiconnav}>
                 <Image source={require('./assets/iconnav.png')} style={estilonav.iconnav}></Image>
             </TouchableOpacity >
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={estilonav.viewlogonav}>

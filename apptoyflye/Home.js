@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
 import { Text, TouchableOpacity, View, TextInput, Button, Image } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+//import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import stylehome from './style/stylehome';
 import Menu from './Menu';
 import Nav from './Nav';
 
-function Home({ navigation }) {
+function Home({ }) {
 
   /*const [result, setResult] = useState('');
  
