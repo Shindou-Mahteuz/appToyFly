@@ -59,7 +59,7 @@ function Cadastro({ navigation }) {
                 />
             </View>
             <View style={stylecadastro.viewbutton}>
-                <TouchableOpacity style={stylecadastro.touchbutton}>
+                <TouchableOpacity style={stylecadastro.touchbutton} onPress={() => navigation.navigate('Home')}>
                     <Text style={stylecadastro.textbutton}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
