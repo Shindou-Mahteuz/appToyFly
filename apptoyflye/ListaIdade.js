@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
-import { Text, TouchableOpacity, View, TextInput, Button, Image } from 'react-native';
+import { Text, TouchableOpacity, View, TextInput, Button, Image, FlatList, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import stylelistaidade from './style/stylelistaidade';
 import Menu from './Menu';
 import Nav from './Nav';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function ListaIdade({ navigation }) {
 
@@ -37,25 +38,45 @@ saveValue();*/
       <View style={stylelistaidade.viewimgmlk}>
         <Image source={require('./assets/banner.png')} style={stylelistaidade.imgmlk}></Image>
       </View>
-      <View style={stylelistaidade.idades}>
+
+      <SafeAreaView style={stylelistaidade.idades}>
         <View style={stylelistaidade.viewimgmidade}>
           <Image source={require('./assets/1a3/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
-      </View>
-      <View style={stylelistaidade.viewbutton}>
-        <TouchableOpacity style={stylelistaidade.touchbutton}>
-          <Text style={stylelistaidade.textbutton}>Logar</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={stylelistaidade.viewtextdesc}>
-        <Text style={stylelistaidade.textdesc}>
-          Não tem uma conta?
-        </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-          <Text style={stylelistaidade.textdesc2}>Clique aqui.</Text>
-        </TouchableOpacity>
+        <View style={stylelistaidade.viewbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton}>
+            <Text style={stylelistaidade.textbutton}>1 a 3 anos</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={stylelistaidade.viewimgmidade}>
+          <Image source={require('./assets/5a8/main.jpg')} style={stylelistaidade.imgidade}></Image>
+        </View>
+        <View style={stylelistaidade.viewbutton2}>
+          <TouchableOpacity style={stylelistaidade.touchbutton}>
+            <Text style={stylelistaidade.textbutton}>5 a 8 anos</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
 
-      </View>
+      <SafeAreaView style={stylelistaidade.idades2}>
+        <View style={stylelistaidade.viewimgmidade}>
+          <Image source={require('./assets/3a5/main.jpg')} style={stylelistaidade.imgidade}></Image>
+        </View>
+        <View style={stylelistaidade.viewbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton}>
+            <Text style={stylelistaidade.textbutton}>3 a 5 anos</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={stylelistaidade.viewimgmidade}>
+          <Image source={require('./assets/8a12/main.jpg')} style={stylelistaidade.imgidade}></Image>
+        </View>
+        <View style={stylelistaidade.viewbutton2}>
+          <TouchableOpacity style={stylelistaidade.touchbutton}>
+            <Text style={stylelistaidade.textbutton}>8 a 12 anos</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+
       <Menu></Menu>
     </View>
   );

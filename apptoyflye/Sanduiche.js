@@ -22,7 +22,7 @@ function Sanduiche() {
                 <Drawer.Screen name="Home" component={Home} />
                 <Drawer.Screen name="Login" component={Login} />
                 <Drawer.Screen name="Cadastro" component={Cadastro} />
-                <Drawer.Screen name="ListaIdade" component={ListaIdade} />
+                <Drawer.Screen name="Lista por Idade" component={ListaIdade} />
             </Drawer.Navigator>
         </NavigationContainer>
     );

@@ -10,7 +10,7 @@ function Menu() {
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                 <Image source={require('./assets/iconhome.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('ListaIdade')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Lista por Idade')}>
                 <Image source={require('./assets/icontoy.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>

@@ -6,7 +6,7 @@ import stylehome from './style/stylehome';
 import Menu from './Menu';
 import Nav from './Nav';
 
-function Home({ }) {
+function Home({ navigation }) {
 
   /*const [result, setResult] = useState('');
  
@@ -46,7 +46,7 @@ saveValue();*/
         </Text>
       </View>
       <View style={stylehome.viewbutton}>
-        <TouchableOpacity style={stylehome.touchbutton}>
+        <TouchableOpacity style={stylehome.touchbutton} onPress={() => navigation.navigate('Lista por Idade')}>
           <Text style={stylehome.textbutton}>Começar a comprar!</Text>
         </TouchableOpacity>
       </View>

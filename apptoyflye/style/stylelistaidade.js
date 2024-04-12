@@ -1,41 +1,58 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    idades:{
-        width: '90%',
-        height: '70%',
-        backgroundColor: 'pink',
+    idades: {
+        width: '50%',
+        height: '50%',
+        backgroundColor: 'white',
+        bottom: 95,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 40,
+        left: 10,
+        position: 'absolute',
+    },
+    idades2:{
+        width: '50%',
+        height: '50%',
+        backgroundColor: 'white',
+        bottom: 95,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 40,
+        right: 10,
+        position: 'absolute',
     },
     imgmlk: {
         borderRadius: 10,
         width: '100%',
-        height: '90%',
+        height: '100%',
     },
     viewimgmlk: {
         position: 'absolute',
-        top: 120,
+        top: 113,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 3,
         borderColor: '#26a1f4',
         width: '106%',
-        height: 150,
+        height: 160,
     },
-    viewimgmidade:{
+    viewimgmidade: {
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
         borderWidth: 4,
         borderColor: '#26a1f4',
-        width: '50%',
-        height: 170,
-    },
-    imgidade:{
-        borderRadius: 10,
-        width: 150,
+        width: '80%',
         height: 150,
+    },
+    imgidade: {
+        borderRadius: 10,
+        width: 130,
+        height: 130,
     },
     textmain: {
         fontSize: 15,
@@ -66,8 +83,20 @@ export default StyleSheet.create({
         borderRadius: 20,
         position: 'absolute',
         bottom: 170,
-        width: '50%',
-        height: 40,
+        width: '60%',
+        height: 27,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#26a1f4',
+    },
+    viewbutton2:{
+        borderWidth: 3,
+        borderColor: 'lightgray',
+        borderRadius: 20,
+        position: 'absolute',
+        bottom: -19,
+        width: '60%',
+        height: 27,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#26a1f4',
@@ -79,16 +108,16 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     textbutton: {
-        fontSize: 15,
+        fontSize: 13,
         color: 'white',
     },
-    form:{
+    form: {
         width: '60%',
         height: '30%',
         top: 80,
         gap: 5,
     },
-    input:{
+    input: {
         backgroundColor: 'white',
         borderRadius: 6,
         height: '19%',
@@ -96,5 +125,5 @@ export default StyleSheet.create({
         borderWidth: 2,
         borderColor: '#26a1f4',
         padding: 10,
-      },
+    },
 })
