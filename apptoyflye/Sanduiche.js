@@ -6,6 +6,7 @@ import Home from './Home';
 import Login from './Login';
 import Cadastro from './Cadastro';
 import ListaIdade from './ListaIdade';
+import Produtos from './Produtos';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,6 +24,7 @@ function Sanduiche() {
                 <Drawer.Screen name="Login" component={Login} />
                 <Drawer.Screen name="Cadastro" component={Cadastro} />
                 <Drawer.Screen name="Lista por Idade" component={ListaIdade} />
+                <Drawer.Screen name="Produtos" component={Produtos} />
             </Drawer.Navigator>
         </NavigationContainer>
     );

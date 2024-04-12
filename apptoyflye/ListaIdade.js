@@ -44,7 +44,7 @@ saveValue();*/
           <Image source={require('./assets/1a3/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
         <View style={stylelistaidade.viewbutton}>
-          <TouchableOpacity style={stylelistaidade.touchbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={() => navigation.navigate('Produtos')}>
             <Text style={stylelistaidade.textbutton}>1 a 3 anos</Text>
           </TouchableOpacity>
         </View>
