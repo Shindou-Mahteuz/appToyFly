@@ -3,45 +3,13 @@ import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollVie
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import styleprodutos from './style/styleprodutos';
-import Menu from './Menu';
-import Nav from './Nav';
-import Lista1a3 from './Lista1a3';
 
-function Produtos({ navigation, route }) {
-    const { valor } = route.params;
-    console.log(route.params);
-
-    /*const imgTitulo = (value) => {
-        switch (valor) {
-            case 1:
-                var description = "Ótimo";
-                return description;
-                break;
-            case 2:
-                var description = "Médio...";
-                return description;
-                break;
-            case 3:
-                var description = "Ruim!";
-                return description;
-                break;
-        }
-    }*/
+function Lista1a3({ navigation, route }) {
     return (
         <View style={styles.container}>
-            <Lista1a3></Lista1a3>
-            <Nav></Nav>
-            <Menu></Menu>
-        </View>
-    );
-}
-
-export default Produtos;
-
-/*<View style={styleprodutos.descpage}>
-                <Text>{titulo}</Text>
-            </View>
-            <SafeAreaView style={styleprodutos.produtos}>
+            <View style={styleprodutos.descpage}>
+                <Text>1 a 3 anos</Text>
+            </View><SafeAreaView style={styleprodutos.produtos}>
                 <ScrollView style={styleprodutos.scrollview}>
 
                     <View style={styleprodutos.card}>
@@ -117,4 +85,9 @@ export default Produtos;
                     <View style={styleprodutos.linha}></View>
 
                 </ScrollView>
-            </SafeAreaView>*/
+            </SafeAreaView>
+        </View>
+    );
+}
+
+export default Lista1a3;

@@ -8,9 +8,25 @@ import Nav from './Nav';
 import { ScrollView } from 'react-native-gesture-handler';
 
 function ListaIdade({ navigation }) {
+  const idade1a3 = () => {
+    var valor = 1;
+    navigation.navigate('Produtos', { valor });
+  };
+  const idade3a5 = () => {
+    var valor = 2;
+    navigation.navigate('Produtos', { valor });
+  };
+  const idade5a8 = () => {
+    var valor = 3;
+    navigation.navigate('Produtos', { valor });
+  };
+  const idade8a12 = () => {
+    var valor = 4;
+    navigation.navigate('Produtos', { valor });
+  };
 
   /*const [result, setResult] = useState('');
- 
+   
   const saveValue = async () => {
     try {
       await AsyncStorage.setItem('resultA', JSON.stringify(result));
@@ -18,7 +34,7 @@ function ListaIdade({ navigation }) {
       console.error('Erro ao salvar valor:', e);
     }
   }; 
- 
+   
   const loadValue = async () => {
     try {
       const value = await AsyncStorage.getItem('result');
@@ -29,8 +45,8 @@ function ListaIdade({ navigation }) {
       console.error('Erro ao carregar valor:', e);
     }
   };
- 
-saveValue();*/
+   
+  saveValue();*/
 
   return (
     <View style={styles.container}>
@@ -44,7 +60,7 @@ saveValue();*/
           <Image source={require('./assets/1a3/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
         <View style={stylelistaidade.viewbutton}>
-          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={() => navigation.navigate('Produtos')}>
+          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={idade1a3}>
             <Text style={stylelistaidade.textbutton}>1 a 3 anos</Text>
           </TouchableOpacity>
         </View>
@@ -52,7 +68,7 @@ saveValue();*/
           <Image source={require('./assets/5a8/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
         <View style={stylelistaidade.viewbutton2}>
-          <TouchableOpacity style={stylelistaidade.touchbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={idade5a8}>
             <Text style={stylelistaidade.textbutton}>5 a 8 anos</Text>
           </TouchableOpacity>
         </View>
@@ -63,7 +79,7 @@ saveValue();*/
           <Image source={require('./assets/3a5/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
         <View style={stylelistaidade.viewbutton}>
-          <TouchableOpacity style={stylelistaidade.touchbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={idade3a5}>
             <Text style={stylelistaidade.textbutton}>3 a 5 anos</Text>
           </TouchableOpacity>
         </View>
@@ -71,7 +87,7 @@ saveValue();*/
           <Image source={require('./assets/8a12/main.jpg')} style={stylelistaidade.imgidade}></Image>
         </View>
         <View style={stylelistaidade.viewbutton2}>
-          <TouchableOpacity style={stylelistaidade.touchbutton}>
+          <TouchableOpacity style={stylelistaidade.touchbutton} onPress={idade8a12}>
             <Text style={stylelistaidade.textbutton}>8 a 12 anos</Text>
           </TouchableOpacity>
         </View>
