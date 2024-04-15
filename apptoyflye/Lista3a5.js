@@ -3,58 +3,23 @@ import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollVie
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import styleprodutos from './style/styleprodutos';
-import Menu from './Menu';
-import Nav from './Nav';
-//import Lista1a3 from './Lista1a3';
-//import Lista3a5 from './Lista3a5';
-//import Lista5a8 from './Lista5a8';
-//import Lista8a12 from './Lista8a12';
 
-function Produtos({ navigation, route }) {
-    const { valor } = route.params;
-    console.log(route.params);
-
-    /*const imgTitulo = (value) => {
-        switch (valor) {
-            case 1:
-                var description = "Ótimo";
-                return description;
-                break;
-            case 2:
-                var description = "Médio...";
-                return description;
-                break;
-            case 3:
-                var description = "Ruim!";
-                return description;
-                break;
-        }
-    }*/
+function Lista1a3({ navigation, route }) {
     return (
         <View style={styles.container}>
-            <Lista8a12></Lista8a12>
-            <Nav></Nav>
-            <Menu></Menu>
-        </View>
-    );
-}
-
-export default Produtos;
-
-/*<View style={styleprodutos.descpage}>
-                <Text>{titulo}</Text>
-            </View>
-            <SafeAreaView style={styleprodutos.produtos}>
+            <View style={styleprodutos.descpage}>
+                <Text>3 a 5 anos</Text>
+            </View><SafeAreaView style={styleprodutos.produtos}>
                 <ScrollView style={styleprodutos.scrollview}>
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/andadorzinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/3a5/batmanejoker.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Andador Fischer Price</Text>
-                            <Text style={styleprodutos.descproduto}>Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 85,90</Text>
+                            <Text style={styleprodutos.titleproduto}>Batman and Joker DC Toy</Text>
+                            <Text style={styleprodutos.descproduto}>Batman se encontra com coringa em um grande desafio! Bonecos articulados e coloridos!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 46,90</Text>
                             <View style={styleprodutos.viewbutton2}>
                                 <TouchableOpacity style={styleprodutos.touchbutton}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
@@ -67,12 +32,12 @@ export default Produtos;
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/chocalhozinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/3a5/minidinos.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Chocalho amigãozinho</Text>
-                            <Text style={styleprodutos.descproduto}>Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 60,00</Text>
+                            <Text style={styleprodutos.titleproduto}>Mini Dynos</Text>
+                            <Text style={styleprodutos.descproduto}>As criaturas mais divertidas do mundo pré-histórico estão de volta! Brinquedos de borracha!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 40,00</Text>
                             <View style={styleprodutos.viewbutton2}>
                                 <TouchableOpacity style={styleprodutos.touchbutton}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
@@ -85,12 +50,12 @@ export default Produtos;
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/peluciapatinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/3a5/pawpatrol.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Pelúcia Cute Duck</Text>
-                            <Text style={styleprodutos.descproduto}>Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 79,90</Text>
+                            <Text style={styleprodutos.titleproduto}>Chase Paw Patrol</Text>
+                            <Text style={styleprodutos.descproduto}>Chase está te esperando para uma nova e grande auauventura!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 39,90</Text>
                             <View style={styleprodutos.viewbutton2}>
                                 <TouchableOpacity style={styleprodutos.touchbutton}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
@@ -103,12 +68,12 @@ export default Produtos;
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/telefoninho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/3a5/spidercar.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Phone-car</Text>
-                            <Text style={styleprodutos.descproduto}>Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 58,50</Text>
+                            <Text style={styleprodutos.titleproduto}>Spiderman Race Adventure</Text>
+                            <Text style={styleprodutos.descproduto}>venha se divertir com Homem aranha em uma aventura super veloz!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 78,90</Text>
                             <View style={styleprodutos.viewbutton2}>
                                 <TouchableOpacity style={styleprodutos.touchbutton}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
@@ -120,4 +85,9 @@ export default Produtos;
                     <View style={styleprodutos.linha}></View>
 
                 </ScrollView>
-            </SafeAreaView>*/
+            </SafeAreaView>
+        </View>
+    );
+}
+
+export default Lista1a3;
