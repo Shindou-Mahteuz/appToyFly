@@ -7,6 +7,7 @@ import Login from './Login';
 import Cadastro from './Cadastro';
 import ListaIdade from './ListaIdade';
 import Produtos from './Produtos';
+import Compra from './Compra';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,9 +23,25 @@ function Sanduiche() {
             }}>
                 <Drawer.Screen name="Home" component={Home} />
                 <Drawer.Screen name="Login" component={Login} />
-                <Drawer.Screen name="Cadastro" component={Cadastro} />
+                <Drawer.Screen name="Cadastro" component={Cadastro}
+                    options={{
+                        drawerItemStyle: { display: 'none' }
+                    }
+                    }
+                />
                 <Drawer.Screen name="Lista por Idade" component={ListaIdade} />
-                <Drawer.Screen name="Produtos" component={Produtos} />
+                <Drawer.Screen name="Produtos" component={Produtos}
+                    options={{
+                        drawerItemStyle: { display: 'none' }
+                    }
+                    }
+                />
+                <Drawer.Screen name="Compra" component={Compra}
+                    options={{
+                        drawerItemStyle: { display: 'none' }
+                    }
+                    }
+                />
             </Drawer.Navigator>
         </NavigationContainer>
     );

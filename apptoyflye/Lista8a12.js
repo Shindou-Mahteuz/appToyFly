@@ -4,24 +4,23 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import styleprodutos from './style/styleprodutos';
 import { useNavigation } from '@react-navigation/native';
-
-function Lista1a3({ route }) {
+function Lista8a12({ route }) {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styleprodutos.descpage}>
-                <Text>1 a 3 anos</Text>
+                <Text>8 a 12 anos</Text>
             </View><SafeAreaView style={styleprodutos.produtos}>
                 <ScrollView style={styleprodutos.scrollview}>
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/andadorzinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/8a12/legoahsoka.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Andador Fischer Price</Text>
-                            <Text style={styleprodutos.descproduto}>Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 85,90</Text>
+                            <Text style={styleprodutos.titleproduto}>Lego Ahsoka Tano</Text>
+                            <Text style={styleprodutos.descproduto}>Lady Tano e sua padawan Sabine em uma grande batalha com seu interceptador Jedi!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 240,90</Text>
                             <View style={styleprodutos.viewbutton2}>
                                 <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
@@ -34,14 +33,14 @@ function Lista1a3({ route }) {
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/chocalhozinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/8a12/legoup.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Chocalho amigãozinho</Text>
-                            <Text style={styleprodutos.descproduto}>Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 60,00</Text>
+                            <Text style={styleprodutos.titleproduto}>Lego UP Altas aventuras</Text>
+                            <Text style={styleprodutos.descproduto}>A casa voadora mais famosa da Disney, Agora em peças de lego para uma complexa diversão!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 270,00</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -52,14 +51,14 @@ function Lista1a3({ route }) {
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/peluciapatinho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/8a12/omnitrix.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Pelúcia Cute Duck</Text>
-                            <Text style={styleprodutos.descproduto}>Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!</Text>
+                            <Text style={styleprodutos.titleproduto}>Omnitrix Força Alienígena</Text>
+                            <Text style={styleprodutos.descproduto}>O mais poderoso artefato da galáxia, agora em seu pulso!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 79,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} >
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -70,14 +69,14 @@ function Lista1a3({ route }) {
 
                     <View style={styleprodutos.card}>
                         <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/telefoninho.jpg')} style={styleprodutos.imgidade}></Image>
+                            <Image source={require('./assets/8a12/sonicrc.jpg')} style={styleprodutos.imgidade}></Image>
                         </View>
                         <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Phone-car</Text>
-                            <Text style={styleprodutos.descproduto}>Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 58,50</Text>
+                            <Text style={styleprodutos.titleproduto}>Sonic Sega All-Stars RC</Text>
+                            <Text style={styleprodutos.descproduto}>Automodelo de Sonic the Hedgehog em seu hyper carro de Sega All-stars!</Text>
+                            <Text style={styleprodutos.precoproduto}>R$ 90,50</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -92,4 +91,4 @@ function Lista1a3({ route }) {
     );
 }
 
-export default Lista1a3;
+export default Lista8a12;

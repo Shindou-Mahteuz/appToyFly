@@ -6,41 +6,13 @@ import styleprodutos from './style/styleprodutos';
 import Menu from './Menu';
 import Nav from './Nav';
 import Lista1a3 from './Lista1a3';
+import Lista3a5 from './Lista3a5';
+import Lista5a8 from './Lista5a8';
+import Lista8a12 from './Lista8a12';
 
 function Produtos({ navigation, route }) {
     const { valor } = route.params;
     console.log(route.params);
-
-    /*const tipoImagem = (value) => {
-        switch (valor) {
-            case 1:
-                return require('./assets/3a5/main.jpg');
-                break;
-            case 2:
-                return require('./assets/3a5/main.jpg');
-                break;
-            case 3:
-                return require('./assets/3a5/main.jpg');
-                break;
-        }
-    }*/
-
-    /*const produtos = (value) => {
-        switch (valor) {
-            case 1:
-                return require("./Lista1a3");
-                break;
-            case 2:
-                return require("./Lista1a3");
-                break;
-            case 3:
-                return require("./Lista1a3");
-                break;
-            default:
-                return require("./Lista1a3");
-                break;
-        }
-    }*/
     return (
         <View style={styles.container}>
             {valor == 1 ?
@@ -49,8 +21,30 @@ function Produtos({ navigation, route }) {
                 </>
                 :
                 <>
-                    <Text>Erro :(</Text>
-                    <Text>Tente novamente mais tarde.</Text>
+                </>
+            }
+            {valor == 2 ?
+                <>
+                    <Lista3a5></Lista3a5>
+                </>
+                :
+                <>
+                </>
+            }
+            {valor == 3 ?
+                <>
+                    <Lista5a8></Lista5a8>
+                </>
+                :
+                <>
+                </>
+            }
+            {valor == 4 ?
+                <>
+                    <Lista8a12></Lista8a12>
+                </>
+                :
+                <>
                 </>
             }
             <Nav></Nav>
