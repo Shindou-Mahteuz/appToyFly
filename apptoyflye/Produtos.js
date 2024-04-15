@@ -11,25 +11,48 @@ function Produtos({ navigation, route }) {
     const { valor } = route.params;
     console.log(route.params);
 
-    /*const imgTitulo = (value) => {
+    /*const tipoImagem = (value) => {
         switch (valor) {
             case 1:
-                var description = "Ótimo";
-                return description;
+                return require('./assets/3a5/main.jpg');
                 break;
             case 2:
-                var description = "Médio...";
-                return description;
+                return require('./assets/3a5/main.jpg');
                 break;
             case 3:
-                var description = "Ruim!";
-                return description;
+                return require('./assets/3a5/main.jpg');
+                break;
+        }
+    }*/
+
+    /*const produtos = (value) => {
+        switch (valor) {
+            case 1:
+                return require("./Lista1a3");
+                break;
+            case 2:
+                return require("./Lista1a3");
+                break;
+            case 3:
+                return require("./Lista1a3");
+                break;
+            default:
+                return require("./Lista1a3");
                 break;
         }
     }*/
     return (
         <View style={styles.container}>
-            <Lista1a3></Lista1a3>
+            {valor == 1 ?
+                <>
+                    <Lista1a3></Lista1a3>
+                </>
+                :
+                <>
+                    <Text>Erro :(</Text>
+                    <Text>Tente novamente mais tarde.</Text>
+                </>
+            }
             <Nav></Nav>
             <Menu></Menu>
         </View>
