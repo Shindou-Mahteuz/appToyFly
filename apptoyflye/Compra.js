@@ -9,21 +9,7 @@ import Menu from './Menu';
 import Nav from './Nav';
 
 function Compra({ navigation, route }) {
-
-  const handlePress = () => {
-    Alert.alert(
-      'Obrigado pela compra!',
-      'Sua compra foi registrada e você já pode retirar em nossa loja!',
-      [
-        { text: 'Início', onPress: () => navigation.navigate("Home") },
-      ]
-    );
-  }
-
-  console.log(route.params);
   const { nome, valor, desc, img } = route.params;
-
-
   const tipoImagem = (value) => {
     switch (img) {
       case 1:
@@ -79,6 +65,28 @@ function Compra({ navigation, route }) {
         break;
     }
   }
+
+  const [pagamento, setPagamento] = useState('');
+
+  const saveValue = async () => {
+    try {
+      await AsyncStorage.setItem('pagamento', JSON.stringify(pagamento));
+    } catch (e) {
+      console.error('Erro ao salvar valor:', e);
+    }
+  };
+
+  console.log(pagamento);
+  const handlePress = () => {
+    Alert.alert(
+      'Obrigado pela compra!',
+      'Sua compra foi registrada e você já pode retirar em nossa loja!',
+      [
+        { text: 'Início', onPress: () => navigation.navigate("Home") },
+      ]
+    );
+
+  }
   return (
     <View style={styles.container}>
       <Nav></Nav>
@@ -97,6 +105,8 @@ function Compra({ navigation, route }) {
         <TextInput
           style={stylelogin.input}
           placeholder="Pix, Cartão ou Dinheiro"
+          onChangeText={setPagamento}
+          value={pagamento}
         />
       </View>
       <View style={stylelogin.viewbutton}>

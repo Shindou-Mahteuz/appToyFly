@@ -9,6 +9,7 @@ import ListaIdade from './ListaIdade';
 import Produtos from './Produtos';
 import Compra from './Compra';
 import Carrinho from './Carrinho';
+import HistoricoCompra from './HistóricoCompra';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,6 +45,8 @@ function Sanduiche() {
                     }
                 />
                 <Drawer.Screen name="Carrinho" component={Carrinho}
+                />
+                <Drawer.Screen name="Historico de compras" component={HistoricoCompra}
                 />
             </Drawer.Navigator>
         </NavigationContainer>
