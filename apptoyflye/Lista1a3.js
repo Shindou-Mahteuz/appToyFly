@@ -23,7 +23,7 @@ function Lista1a3({ route }) {
                             <Text style={styleprodutos.descproduto}>Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 85,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Andador Fischer Price', valor: 'R$ 85,90', desc: 'Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!', img: 1 })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -41,7 +41,7 @@ function Lista1a3({ route }) {
                             <Text style={styleprodutos.descproduto}>Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 60,00</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Chocalho amigãozinho', valor: 'R$ 60,00', desc: 'Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!', img: 2 })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -59,7 +59,7 @@ function Lista1a3({ route }) {
                             <Text style={styleprodutos.descproduto}>Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 79,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} >
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Pelúcia Cute Duck', valor: 'R$ 79,90', desc: 'Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!', img: 3 })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -77,7 +77,7 @@ function Lista1a3({ route }) {
                             <Text style={styleprodutos.descproduto}>Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 58,50</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Phone-car', valor: 'R$ 58,50', desc: 'Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!', img: 4 })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>

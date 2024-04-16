@@ -23,7 +23,7 @@ function Lista3a5({ route }) {
                             <Text style={styleprodutos.descproduto}>Batman se encontra com coringa em um grande desafio! Bonecos articulados e coloridos!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 46,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Batman and Joker DC Toy', valor: 'R$ 46,90', desc: 'Batman se encontra com coringa em um grande desafio! Bonecos articulados e coloridos!', img: 5 })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -41,7 +41,13 @@ function Lista3a5({ route }) {
                             <Text style={styleprodutos.descproduto}>As criaturas mais divertidas do mundo pré-histórico estão de volta! Brinquedos de borracha!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 40,00</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() =>
+                                    navigation.navigate('Compra', {
+                                        nome: 'Mini Dynos',
+                                        valor: 'R$ 40,00',
+                                        desc: 'As criaturas mais divertidas do mundo pré-histórico estão de volta! Brinquedos de borracha!',
+                                        img: 6
+                                    })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -59,7 +65,13 @@ function Lista3a5({ route }) {
                             <Text style={styleprodutos.descproduto}>Chase está te esperando para uma nova e grande auauventura!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 39,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Chase Paw Patrol',
+                                        valor: 'R$ 39,90',
+                                        desc: 'Chase está te esperando para uma nova e grande auauventura!',
+                                        img: 7
+                                    })}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -77,7 +89,14 @@ function Lista3a5({ route }) {
                             <Text style={styleprodutos.descproduto}>venha se divertir com Homem aranha em uma aventura super veloz!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 78,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Spiderman Race Adventure',
+                                        valor: 'R$ 78,90',
+                                        desc: 'venha se divertir com Homem aranha em uma aventura super veloz!',
+                                        img: 8
+                                    }
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>

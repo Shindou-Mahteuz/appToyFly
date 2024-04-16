@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    descpage:{
+    descpage: {
         position: 'absolute',
         top: 50,
         right: 30,
@@ -20,20 +20,20 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    scrollview:{
+    scrollview: {
         width: '100%',
     },
-    viewtextoproduto:{
+    viewtextoproduto: {
         width: '60%',
         alignItems: 'center',
     },
-    linha:{
+    linha: {
         width: '100%',
         height: 2,
         backgroundColor: 'lightgray',
         margin: 10,
     },
-    card:{
+    card: {
         flexDirection: 'row',
         width: '100%',
         height: 170,
@@ -42,21 +42,21 @@ export default StyleSheet.create({
         borderRadius: 15,
         borderColor: '#26a1f4',
     },
-    titleproduto:{
+    titleproduto: {
         fontSize: 15,
         margin: 5,
         fontWeight: 'bold',
     },
-    descproduto:{
+    descproduto: {
         fontSize: 10,
         marginLeft: 10,
     },
-    precoproduto:{
+    precoproduto: {
         fontSize: 20,
         margin: 3,
         fontWeight: 'bold',
     },
-    idades2:{
+    idades2: {
         width: '50%',
         height: '50%',
         backgroundColor: 'white',
@@ -133,7 +133,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#26a1f4',
     },
-    viewbutton2:{
+    viewbutton2: {
         borderWidth: 3,
         borderColor: 'lightgray',
         borderRadius: 20,
@@ -169,5 +169,13 @@ export default StyleSheet.create({
         borderWidth: 2,
         borderColor: '#26a1f4',
         padding: 10,
+    },
+    form: {
+        width: '60%',
+        height: '30%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: 50,
+        gap: 2,
     },
 })

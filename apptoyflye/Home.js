@@ -46,7 +46,7 @@ saveValue();*/
         </Text>
       </View>
       <View style={stylehome.viewbutton}>
-        <TouchableOpacity style={stylehome.touchbutton} onPress={() => navigation.navigate('Lista por Idade')}>
+        <TouchableOpacity style={stylehome.touchbutton} onPress={() => navigation.navigate('ListaporIdade')}>
           <Text style={stylehome.textbutton}>Começar a comprar!</Text>
         </TouchableOpacity>
       </View>

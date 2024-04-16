@@ -22,7 +22,14 @@ function Lista5a8({ route }) {
                             <Text style={styleprodutos.descproduto}>Um potente bimotor anfíbio com dardos e uma garra super forte!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 68,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Avião Imaginext',
+                                        valor: 'R$ 68,90',
+                                        desc: 'Um potente bimotor anfíbio com dardos e uma garra super forte!',
+                                        img: 9
+                                    }
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -40,7 +47,14 @@ function Lista5a8({ route }) {
                             <Text style={styleprodutos.descproduto}>Controle a grande fúria do período cretaceo com seus equipamentos tecnológicos!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 90,50</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Braquiossauro Imaginext',
+                                        valor: 'R$ 90,50',
+                                        desc: 'Controle a grande fúria do período cretaceo com seus equipamentos tecnológicos!',
+                                        img: 10
+                                    }
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -58,7 +72,15 @@ function Lista5a8({ route }) {
                             <Text style={styleprodutos.descproduto}>Tripa velocitatte agora no controle na palma de sua mão!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 115,00</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Francesco Virgolini RC',
+                                        valor: 'R$ 115,00',
+                                        desc: 'Tripa velocitatte agora no controle na palma de sua mão!',
+                                        img: 11
+                                    }
+
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -76,7 +98,15 @@ function Lista5a8({ route }) {
                             <Text style={styleprodutos.descproduto}>Grandes loop's alucinantes em alta velocidade! Vai encarar?</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 190,80</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                    {
+                                        nome: 'Super loop Hotwheels',
+                                        valor: 'R$ 190,80',
+                                        desc: 'Grandes loops alucinantes em alta velocidade! Vai encarar?',
+                                        img: 12
+                                    }
+
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>

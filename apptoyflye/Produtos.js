@@ -17,7 +17,7 @@ function Produtos({ navigation, route }) {
         <View style={styles.container}>
             {valor == 1 ?
                 <>
-                    <Lista1a3></Lista1a3>
+                    <Lista1a3 />
                 </>
                 :
                 <>

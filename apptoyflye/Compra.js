@@ -4,10 +4,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import stylelogin from './style/stylelogin';
 import stylehome from './style/stylehome';
+import styleprodutos from './style/styleprodutos';
 import Menu from './Menu';
 import Nav from './Nav';
 
-function Compra({ navigation }) {
+function Compra({ navigation, route }) {
 
   const handlePress = () => {
     Alert.alert(
@@ -18,29 +19,66 @@ function Compra({ navigation }) {
       ]
     );
   }
-  /*const [result, setResult] = useState('');
- 
-  const saveValue = async () => {
-    try {
-      await AsyncStorage.setItem('resultA', JSON.stringify(result));
-    } catch (e) {
-      console.error('Erro ao salvar valor:', e);
-    }
-  }; 
- 
-  const loadValue = async () => {
-    try {
-      const value = await AsyncStorage.getItem('result');
-      if (value !== null) {
-        a = JSON.parse(value);
-      }
-    } catch (e) {
-      console.error('Erro ao carregar valor:', e);
-    }
-  };
- 
-saveValue();*/
 
+  console.log(route.params);
+  const { nome, valor, desc, img } = route.params;
+
+
+  const tipoImagem = (value) => {
+    switch (img) {
+      case 1:
+        return require('./assets/1a3/andadorzinho.jpg');
+        break;
+      case 2:
+        return require('./assets/1a3/chocalhozinho.jpg');
+        break;
+      case 3:
+        return require('./assets/1a3/peluciapatinho.jpg');
+        break;
+      case 4:
+        return require('./assets/1a3/telefoninho.jpg');
+        break;
+      case 5:
+        return require('./assets/3a5/batmanejoker.jpg');
+        break;
+      case 6:
+        return require('./assets/3a5/minidinos.jpg');
+        break;
+      case 7:
+        return require('./assets/3a5/pawpatrol.jpg');
+        break;
+      case 8:
+        return require('./assets/3a5/spidercar.jpg');
+        break;
+      case 9:
+        return require('./assets/5a8/aviaoimaginext.jpg');
+        break;
+      case 10:
+        return require('./assets/5a8/dinossauroimaginext.jpg');
+        break;
+      case 11:
+        return require('./assets/5a8/franchescorc.jpg');
+        break;
+      case 12:
+        return require('./assets/5a8/pistahotwheels.jpg');
+        break;
+      case 13:
+        return require('./assets/8a12/legoahsoka.jpg');
+        break;
+      case 14:
+        return require('./assets/8a12/legoup.jpg');
+        break;
+      case 15:
+        return require('./assets/8a12/omnitrix.jpg');
+        break;
+      case 16:
+        return require('./assets/8a12/sonicrc.jpg');
+        break;
+      default:
+        return require('./assets/1a3/main.jpg');
+        break;
+    }
+  }
   return (
     <View style={styles.container}>
       <Nav></Nav>
@@ -48,22 +86,18 @@ saveValue();*/
         <Text style={stylelogin.textmain}>Toy Fly - Seu aplicativo para comprar brinquedos!</Text>
       </View>
       <View style={stylelogin.viewimgmlk}>
-        <Image source={require('./assets/hotwheels.jpg')} style={stylelogin.imgmlk}></Image>
+        <Image source={tipoImagem()} style={stylelogin.imgmlk}></Image>
       </View>
-      <View style={stylelogin.form}>
-        <Text>Hotwheels Ataque do tubarão</Text>
-
-
-        <Text style={stylehome.textdesc}>Diversão garantida com a Pista de Percurso e Veículo - Hot Wheels - City - Robô Tubarão - Mattel! A Hot Wheels City está sendo atacada por um enorme tubarão robótico!
+      <View style={styleprodutos.form}>
+        <Text style={styleprodutos.titleproduto}>{nome}</Text>
+        <Text style={stylehome.textdesc}>{desc}
         </Text>
-
-        <Text></Text>
+        <Text style={styleprodutos.precoproduto} >{valor}</Text>
         <Text>Método de pagamento:</Text>
         <TextInput
           style={stylelogin.input}
           placeholder="Pix, Cartão ou Dinheiro"
         />
-
       </View>
       <View style={stylelogin.viewbutton}>
         <TouchableOpacity style={stylelogin.touchbutton} onPress={handlePress}>

@@ -22,7 +22,15 @@ function Lista8a12({ route }) {
                             <Text style={styleprodutos.descproduto}>Lady Tano e sua padawan Sabine em uma grande batalha com seu interceptador Jedi!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 240,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                {
+                                    nome: 'Lego Ahsoka Tano',
+                                    valor: 'R$ 240,90',
+                                    desc: 'Lady Tano e sua padawan Sabine em uma grande batalha com seu interceptador Jedi!',
+                                    img: 13
+                                }
+                                
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -40,7 +48,15 @@ function Lista8a12({ route }) {
                             <Text style={styleprodutos.descproduto}>A casa voadora mais famosa da Disney, Agora em peças de lego para uma complexa diversão!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 270,00</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                 {
+                                    nome: 'Lego UP Altas aventuras',
+                                    valor: 'R$ 270,00',
+                                    desc: 'A casa voadora mais famosa da Disney, Agora em peças de lego para uma complexa diversão!',
+                                    img: 14
+                                }
+                                
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -58,7 +74,15 @@ function Lista8a12({ route }) {
                             <Text style={styleprodutos.descproduto}>O mais poderoso artefato da galáxia, agora em seu pulso!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 79,90</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                 {
+                                    nome: 'Omnitrix Força Alienígena',
+                                    valor: 'R$ 79,90',
+                                    desc: 'O mais poderoso artefato da galáxia, agora em seu pulso!',
+                                    img: 15
+                                }
+                                
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -76,7 +100,15 @@ function Lista8a12({ route }) {
                             <Text style={styleprodutos.descproduto}>Automodelo de Sonic the Hedgehog em seu hyper carro de Sega All-stars!</Text>
                             <Text style={styleprodutos.precoproduto}>R$ 90,50</Text>
                             <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra')}>
+                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra',
+                                {
+                                    nome: 'Sonic Sega All-Stars RC',
+                                    valor: 'R$ 90,50',
+                                    desc: 'Automodelo de Sonic the Hedgehog em seu hyper carro de Sega All-stars!',
+                                    img: 16
+                                }
+                                
+                                )}>
                                     <Text style={styleprodutos.textbutton}>Comprar</Text>
                                 </TouchableOpacity>
                             </View>
