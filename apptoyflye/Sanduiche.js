@@ -8,6 +8,7 @@ import Cadastro from './Cadastro';
 import ListaIdade from './ListaIdade';
 import Produtos from './Produtos';
 import Compra from './Compra';
+import Carrinho from './Carrinho';
 
 const Drawer = createDrawerNavigator();
 
@@ -41,6 +42,8 @@ function Sanduiche() {
                         drawerItemStyle: { display: 'none' }
                     }
                     }
+                />
+                <Drawer.Screen name="Carrinho" component={Carrinho}
                 />
             </Drawer.Navigator>
         </NavigationContainer>

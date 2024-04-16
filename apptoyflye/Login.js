@@ -55,7 +55,7 @@ function Login({ navigation }) {
                 />
             </View>
             <View style={stylelogin.viewbutton}>
-                <TouchableOpacity style={stylelogin.touchbutton}>
+                <TouchableOpacity style={stylelogin.touchbutton}  onPress={() => navigation.navigate('Home')}>
                     <Text style={stylelogin.textbutton}>Logar</Text>
                 </TouchableOpacity>
             </View>
