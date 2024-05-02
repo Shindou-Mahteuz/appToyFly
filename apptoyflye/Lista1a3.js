@@ -1,92 +1,53 @@
-import { React, useState } from 'react';
-import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button } from 'react-native';
+import { React, useState, useEffect } from 'react';
+import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button, FlatList, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import styleprodutos from './style/styleprodutos';
 import { useNavigation } from '@react-navigation/native';
 
 function Lista1a3({ route }) {
+    const [produtos, setProdutos] = useState([]);
+    useEffect(() => {
+        fetch('http://172.16.42.89/apiToyFly/select')
+            //fetch('https://api.semlimite.app.br/select/')
+            .then(response => response.json())
+            .then(data => setProdutos(data))
+            .catch(error => alert('Sem Registro'));
+    }, []);
     const navigation = useNavigation();
+    const aviso = (a, b, c, d, e) => {
+        alert(a, b, c, d, e);
+    }
     return (
         <View style={styles.container}>
             <View style={styleprodutos.descpage}>
                 <Text>1 a 3 anos</Text>
             </View><SafeAreaView style={styleprodutos.produtos}>
-                <ScrollView style={styleprodutos.scrollview}>
-
-                    <View style={styleprodutos.card}>
-                        <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/andadorzinho.jpg')} style={styleprodutos.imgidade}></Image>
-                        </View>
-                        <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Andador Fischer Price</Text>
-                            <Text style={styleprodutos.descproduto}>Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 85,90</Text>
-                            <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Andador Fischer Price', valor: 'R$ 85,90', desc: 'Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!', img: 1 })}>
-                                    <Text style={styleprodutos.textbutton}>Comprar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styleprodutos.linha}></View>
-
-                    <View style={styleprodutos.card}>
-                        <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/chocalhozinho.jpg')} style={styleprodutos.imgidade}></Image>
-                        </View>
-                        <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Chocalho amigãozinho</Text>
-                            <Text style={styleprodutos.descproduto}>Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 60,00</Text>
-                            <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Chocalho amigãozinho', valor: 'R$ 60,00', desc: 'Animaizinhos divertidos e com sons diversos em um chocalho suspenso, que irão divertir o seu pequeno!', img: 2 })}>
-                                    <Text style={styleprodutos.textbutton}>Comprar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styleprodutos.linha}></View>
-
-                    <View style={styleprodutos.card}>
-                        <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/peluciapatinho.jpg')} style={styleprodutos.imgidade}></Image>
-                        </View>
-                        <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Pelúcia Cute Duck</Text>
-                            <Text style={styleprodutos.descproduto}>Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 79,90</Text>
-                            <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Pelúcia Cute Duck', valor: 'R$ 79,90', desc: 'Cute Duck será o novo amiguinho de seu filho, com frases divertidas e fofas que interagem com a criança!', img: 3 })}>
-                                    <Text style={styleprodutos.textbutton}>Comprar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styleprodutos.linha}></View>
-
-                    <View style={styleprodutos.card}>
-                        <View style={styleprodutos.viewimgmidade}>
-                            <Image source={require('./assets/1a3/telefoninho.jpg')} style={styleprodutos.imgidade}></Image>
-                        </View>
-                        <View style={styleprodutos.viewtextoproduto}>
-                            <Text style={styleprodutos.titleproduto}>Phone-car</Text>
-                            <Text style={styleprodutos.descproduto}>Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!</Text>
-                            <Text style={styleprodutos.precoproduto}>R$ 58,50</Text>
-                            <View style={styleprodutos.viewbutton2}>
-                                <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Phone-car', valor: 'R$ 58,50', desc: 'Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!', img: 4 })}>
-                                    <Text style={styleprodutos.textbutton}>Comprar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styleprodutos.linha}></View>
-
-                </ScrollView>
+                    <FlatList
+                        data={produtos}
+                        keyExtractor={item => item.id.toString()}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity onPress={() => aviso(item.id, item.nome, item.descricao, item.preco, item.idade)}>
+                                
+                                <View style={styleprodutos.card}>
+                                    <View style={styleprodutos.viewimgmidade}>
+                                        <Image source={require('./assets/1a3/andadorzinho.jpg')} style={styleprodutos.imgidade}></Image>
+                                    </View>
+                                    <View style={styleprodutos.viewtextoproduto}>
+                                        <Text style={styleprodutos.titleproduto}>{item.nome}</Text>
+                                        <Text>{item.imagem}</Text>
+                                        <Text style={styleprodutos.descproduto}>{item.descricao}</Text>
+                                        <Text style={styleprodutos.precoproduto}>{item.preco}</Text>
+                                        <View style={styleprodutos.viewbutton2}>
+                                            <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Andador Fischer Price', valor: 'R$ 85,90', desc: 'Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!', img: 1 })}>
+                                                <Text style={styleprodutos.textbutton}>Comprar</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                                <View style={styleprodutos.linha}></View>
+                            </TouchableOpacity>
+                        )} />
             </SafeAreaView>
         </View>
     );
