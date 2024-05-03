@@ -1,5 +1,5 @@
-import { React, useState } from 'react';
-import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button } from 'react-native';
+import { React, useState, useEffect } from 'react';
+import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button, FlatList } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import styleprodutos from './style/styleprodutos';
@@ -55,7 +55,45 @@ function Produtos({ navigation, route }) {
 
 export default Produtos;
 
-/*<View style={styleprodutos.descpage}>
+/* 
+    TENTATIVA DE COLOCAR SÓ AS COISA DO BANCO MAS DEU PAU 03/04
+<View style={styleprodutos.descpage}>
+                <Text>1 a 3 anos</Text>
+            </View><SafeAreaView style={styleprodutos.produtos}>
+                <FlatList
+                    data={produtos}
+                    keyExtractor={item => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity onPress={() => aviso(item.id, item.nome, item.descricao, item.preco, item.idade)}>
+
+                            <View style={styleprodutos.card}>
+                                <View style={styleprodutos.viewimgmidade}>
+                                    <Image source={{ uri: `${item.imagem}` }} style={styleprodutos.imgidade} />
+                                </View>
+                                <View style={styleprodutos.viewtextoproduto}>
+                                    <Text style={styleprodutos.titleproduto}>{item.nome}</Text>
+                                    <Text style={styleprodutos.descproduto}>{item.descricao}</Text>
+                                    <Text style={styleprodutos.precoproduto}>{item.preco}</Text>
+                                    <View style={styleprodutos.viewbutton2}>
+                                        <TouchableOpacity style={styleprodutos.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Andador Fischer Price', valor: 'R$ 85,90', desc: 'Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!', img: 1 })}>
+                                            <Text style={styleprodutos.textbutton}>Comprar</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styleprodutos.linha}></View>
+                        </TouchableOpacity>
+                    )} />
+            </SafeAreaView>
+            */
+
+
+
+
+
+/*
+                        TUDO SETADO NA MÃO, ESSA É A V1, MAS É SÓ RASCUNHO SLA JOGA FORA DPS
+<View style={styleprodutos.descpage}>
                 <Text>{titulo}</Text>
             </View>
             <SafeAreaView style={styleprodutos.produtos}>
@@ -134,4 +172,48 @@ export default Produtos;
                     <View style={styleprodutos.linha}></View>
 
                 </ScrollView>
-            </SafeAreaView>*/
+            </SafeAreaView>
+            
+            
+            
+            
+            
+            
+            
+            ISSO AQUI FOI SÓ PRA SALVAR O TERNÁRIO SE QUISER JOGA FORA SE NÃO PRECISAR USAR DPS
+            {valor == 1 ?
+                <>
+                    <Lista1a3 />
+                </>
+                :
+                <>
+                </>
+            }
+            {valor == 2 ?
+                <>
+                    <Lista3a5></Lista3a5>
+                </>
+                :
+                <>
+                </>
+            }
+            {valor == 3 ?
+                <>
+                    <Lista5a8></Lista5a8>
+                </>
+                :
+                <>
+                </>
+            }
+            {valor == 4 ?
+                <>
+                    <Lista8a12></Lista8a12>
+                </>
+                :
+                <>
+                </>
+            }
+            
+            
+            
+            */
