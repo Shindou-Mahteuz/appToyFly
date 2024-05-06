@@ -19,6 +19,7 @@ export default StyleSheet.create({
         height: 150,
     },
     textmain: {
+        top: 40,
         fontSize: 15,
         fontWeight: 'bold',
     },
@@ -66,7 +67,7 @@ export default StyleSheet.create({
     form:{
         width: '60%',
         height: '30%',
-        top: 60,
+        top: -30,
         gap: 8,
     },
     input:{

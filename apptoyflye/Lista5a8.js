@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 function Lista5a8({ route }) {
     const [produtos, setProdutos] = useState([]);
     useEffect(() => {
-        fetch('http://172.16.42.89/apiToyFly/select5a8/')
+        fetch('http://172.16.42.89/apitoyfly/select5a8/')
             //fetch('https://api.semlimite.app.br/select/')
             .then(response => response.json())
             .then(data => setProdutos(data))

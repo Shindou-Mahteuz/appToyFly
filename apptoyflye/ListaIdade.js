@@ -8,6 +8,8 @@ import Nav from './Nav';
 import { ScrollView } from 'react-native-gesture-handler';
 
 function ListaIdade({ navigation }) {
+  const [dados, setDados] = useState('');
+
   const idade1a3 = () => {
     var valor = 1;
     navigation.navigate('Produtos', { valor });
@@ -25,6 +27,18 @@ function ListaIdade({ navigation }) {
     navigation.navigate('Produtos', { valor });
   };
 
+  const loadValue = async () => {
+    try {
+      const value = await AsyncStorage.getItem('dados');
+      if (value !== null) {
+        setDados(value);
+        console.log(dados);
+      }
+    } catch (e) {
+      console.error('Erro ao carregar valor:', e);
+    }
+  };
+
   /*const [result, setResult] = useState('');
    
   const saveValue = async () => {
@@ -35,18 +49,11 @@ function ListaIdade({ navigation }) {
     }
   }; 
    
-  const loadValue = async () => {
-    try {
-      const value = await AsyncStorage.getItem('result');
-      if (value !== null) {
-        a = JSON.parse(value);
-      }
-    } catch (e) {
-      console.error('Erro ao carregar valor:', e);
-    }
-  };
+  
    
   saveValue();*/
+  loadValue();
+  console.log(dados);
 
   return (
     <View style={styles.container}>
