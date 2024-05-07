@@ -10,6 +10,7 @@ import Produtos from './Produtos';
 import Compra from './Compra';
 import Carrinho from './Carrinho';
 import HistoricoCompra from './HistóricoCompra';
+import ListaPromocao from './ListaPromocao';
 
 const Drawer = createDrawerNavigator();
 

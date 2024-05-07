@@ -38,7 +38,7 @@ function Nav() {
                 <Image source={require('./assets/logo.png')} style={estilonav.logonav}></Image>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={estilonav.viewlogoprofile}>
-                <Image source={{ uri: `${imagem}` }} style={estilonav.logoprofile}></Image>
+                <Image source={require('./assets/pedro-raccoon.gif')} style={estilonav.logoprofile}></Image>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={estilonav.viewtextleave}>
                 <Text style={estilonav.textleave}>Sair</Text>

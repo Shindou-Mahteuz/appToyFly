@@ -8,6 +8,7 @@ import styleprodutos from './style/styleprodutos';
 import Menu from './Menu';
 import Nav from './Nav';
 
+
 function Compra({ navigation, route }) {
   const { nome, valor, desc, img } = route.params;
   const tipoImagem = (value) => {
