@@ -104,6 +104,9 @@ saveValue();*/
           onChangeText={(text) => setSenha(text)}
           value={senha}
         />
+
+
+        
       </View>
       <View style={stylelogin.viewbutton}>
         <TouchableOpacity style={stylelogin.touchbutton} onPress={autenticar}>
@@ -118,7 +121,12 @@ saveValue();*/
           <Text style={stylelogin.textdesc2}>Clique aqui.</Text>
         </TouchableOpacity>
 
+        
+
       </View>
+
+
+
       <Menu></Menu>
     </View>
   );

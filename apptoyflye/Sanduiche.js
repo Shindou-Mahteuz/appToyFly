@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer,  } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import Home from './Home';
 import Login from './Login';
@@ -20,7 +20,8 @@ function Sanduiche() {
             <Drawer.Navigator initialRouteName="Home" screenOptions={{
                 headerShown: false,
                 drawerStyle: {
-                    backgroundColor: 'white',
+                    backgroundColor: '#FCF3CF',
+                   
                     width: 250,
                 },
             }}>
