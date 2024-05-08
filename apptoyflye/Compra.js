@@ -2,70 +2,15 @@ import { React, useState } from 'react';
 import { Text, TouchableOpacity, View, TextInput, Button, Image, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
-import stylelogin from './style/stylelogin';
+import stylecompra from './style/stylecompra';
 import stylehome from './style/stylehome';
 import styleprodutos from './style/styleprodutos';
 import Menu from './Menu';
 import Nav from './Nav';
 
 function Compra({ navigation, route }) {
-  const { nome, valor, desc, img } = route.params;
-  const tipoImagem = (value) => {
-    switch (img) {
-      case 1:
-        return require('./assets/1a3/andadorzinho.jpg');
-        break;
-      case 2:
-        return require('./assets/1a3/chocalhozinho.jpg');
-        break;
-      case 3:
-        return require('./assets/1a3/peluciapatinho.jpg');
-        break;
-      case 4:
-        return require('./assets/1a3/telefoninho.jpg');
-        break;
-      case 5:
-        return require('./assets/3a5/batmanejoker.jpg');
-        break;
-      case 6:
-        return require('./assets/3a5/minidinos.jpg');
-        break;
-      case 7:
-        return require('./assets/3a5/pawpatrol.jpg');
-        break;
-      case 8:
-        return require('./assets/3a5/spidercar.jpg');
-        break;
-      case 9:
-        return require('./assets/5a8/aviaoimaginext.jpg');
-        break;
-      case 10:
-        return require('./assets/5a8/dinossauroimaginext.jpg');
-        break;
-      case 11:
-        return require('./assets/5a8/franchescorc.jpg');
-        break;
-      case 12:
-        return require('./assets/5a8/pistahotwheels.jpg');
-        break;
-      case 13:
-        return require('./assets/8a12/legoahsoka.jpg');
-        break;
-      case 14:
-        return require('./assets/8a12/legoup.jpg');
-        break;
-      case 15:
-        return require('./assets/8a12/omnitrix.jpg');
-        break;
-      case 16:
-        return require('./assets/8a12/sonicrc.jpg');
-        break;
-      default:
-        return require('./assets/1a3/main.jpg');
-        break;
-    }
-  }
-
+  const {imagem, nome, descricao, preco} = route.params;
+  console.log(route.params);
   const [pagamento, setPagamento] = useState('');
 
   const saveValue = async () => {
@@ -90,28 +35,28 @@ function Compra({ navigation, route }) {
   return (
     <View style={styles.container}>
       <Nav></Nav>
-      <View style={stylelogin.viewtextmain}>
-        <Text style={stylelogin.textmain}>Toy Fly - Seu aplicativo para comprar brinquedos!</Text>
+      <View style={stylecompra.viewtextmain}>
+        <Text style={stylecompra.textmain}>Toy Fly - Seu aplicativo para comprar brinquedos!</Text>
       </View>
-      <View style={stylelogin.viewimgmlk}>
-        <Image source={tipoImagem()} style={stylelogin.imgmlk}></Image>
+      <View style={stylecompra.viewimgmlk}>
+        <Image source={{ uri: `${imagem}` }} style={stylecompra.imgmlk}></Image>
       </View>
-      <View style={styleprodutos.form}>
-        <Text style={styleprodutos.titleproduto}>{nome}</Text>
-        <Text style={stylehome.textdesc}>{desc}
+      <View style={stylecompra.form}>
+        <Text style={stylecompra.titleproduto}>{nome}</Text>
+        <Text style={stylecompra.textdesc}>{descricao}
         </Text>
-        <Text style={styleprodutos.precoproduto} >{valor}</Text>
+        <Text style={stylecompra.precoproduto} >{preco}</Text>
         <Text>Método de pagamento:</Text>
         <TextInput
-          style={stylelogin.input}
+          style={stylecompra.input}
           placeholder="Pix, Cartão ou Dinheiro"
           onChangeText={setPagamento}
           value={pagamento}
         />
       </View>
-      <View style={stylelogin.viewbutton}>
-        <TouchableOpacity style={stylelogin.touchbutton} onPress={handlePress}>
-          <Text style={stylelogin.textbutton}>Comprar</Text>
+      <View style={stylecompra.viewbutton}>
+        <TouchableOpacity style={stylecompra.touchbutton} onPress={handlePress}>
+          <Text style={stylecompra.textbutton}>Comprar</Text>
         </TouchableOpacity>
       </View>
 

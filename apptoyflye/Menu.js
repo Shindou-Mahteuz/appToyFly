@@ -13,9 +13,6 @@ function Menu() {
             <TouchableOpacity onPress={() => navigation.navigate('ListaIdade')}>
                 <Image source={require('./assets/icontoy.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Carrinho')}>
-                <Image source={require('./assets/iconcar.png')} style={estilomenu.iconmenu}></Image>
-            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                 <Image source={require('./assets/iconuser.png')} style={estilomenu.iconmenu}></Image>
             </TouchableOpacity>

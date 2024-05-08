@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button } from 'react-native';
+import { Text, TouchableOpacity, View, TextInput, Image, SafeAreaView, ScrollView, Button, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
 import stylecarrinho from './style/stylecarrinho';
@@ -7,6 +7,24 @@ import Menu from './Menu';
 import Nav from './Nav';
 
 function Carrinho({ navigation, route }) {
+    const [id2, setId2] = useState('');
+    console.log(route.params);
+    const {descricao, id, idade, nome, preco, imagem} = route.params;
+    const comprar = async () => {
+        try {
+            const idV = await AsyncStorage.getItem('id');
+            if (idV !== null) {
+                setId2(idV);
+                navigation.navigate('Compra', {imagem, nome, descricao, preco});
+            } else {
+                Alert.alert("Você ainda não está logado!");
+                navigation.navigate('Login');
+            }
+        } catch (error) {
+            console.log('Erro ao carregar valor:', error);
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={stylecarrinho.descpage}>
@@ -16,38 +34,26 @@ function Carrinho({ navigation, route }) {
 
                     <View style={stylecarrinho.card}>
                         <View style={stylecarrinho.viewimgmidade}>
-                            <Image source={require('./assets/1a3/andadorzinho.jpg')} style={stylecarrinho.imgidade}></Image>
+                            <Image source={{ uri: `${imagem}` }} style={stylecarrinho.imgidade}></Image>
                         </View>
                         <View style={stylecarrinho.viewtextoproduto}>
-                            <Text style={stylecarrinho.titleproduto}>Andador Fischer Price</Text>
-                            <Text style={stylecarrinho.descproduto}>Um andador divertido cheio de cor e ferramentas para estimular a criatividade e coordenação motora de seu pequeno!</Text>
-                            <Text style={stylecarrinho.precoproduto}>R$ 85,90</Text>
+                            <Text style={stylecarrinho.titleproduto}>{nome}</Text>
+                            <Text style={stylecarrinho.descproduto}>{descricao}</Text>
+                            <Text style={stylecarrinho.precoproduto}>{preco}</Text>
                         </View>
                     </View>
 
-                    <View style={stylecarrinho.linha}></View>
-
-                    <View style={stylecarrinho.card}>
-                        <View style={stylecarrinho.viewimgmidade}>
-                            <Image source={require('./assets/1a3/telefoninho.jpg')} style={stylecarrinho.imgidade}></Image>
-                        </View>
-                        <View style={stylecarrinho.viewtextoproduto}>
-                            <Text style={stylecarrinho.titleproduto}>Phone-car</Text>
-                            <Text style={stylecarrinho.descproduto}>Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!</Text>
-                            <Text style={stylecarrinho.precoproduto}>R$ 58,50</Text>
-                        </View>
-                    </View>
                     <View style={stylecarrinho.linha}></View>
 
                     <View style={stylecarrinho.card2}>
                         <View style={stylecarrinho.viewbutton2}>
-                            <TouchableOpacity style={stylecarrinho.touchbutton} onPress={() => navigation.navigate('Compra', { nome: 'Phone-car', valor: 'R$ 58,50', desc: 'Um telefonezinho engraçado e divertido com funções que irão aguçar a criatividade e curiosidade da criança!', img: 4 })}>
+                            <TouchableOpacity style={stylecarrinho.touchbutton} onPress={comprar}>
                                 <Text style={stylecarrinho.textbutton}>Finalizar Compras</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                    <View style={stylecarrinho.linha}></View>
+                    
                 </ScrollView>
 
             </SafeAreaView>
