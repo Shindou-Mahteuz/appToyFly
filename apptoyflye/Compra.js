@@ -7,6 +7,31 @@ import stylehome from './style/stylehome';
 import styleprodutos from './style/styleprodutos';
 import Menu from './Menu';
 import Nav from './Nav';
+import RNPickerSelect from 'react-native-picker-select';
+
+const TaskForm = () => {
+  const [priority, setPriority] = useState('');
+
+  const priorityOptions = [
+    { label: 'Pix', value: 'pix' },
+    { label: 'Cartão', value: 'cartao' },
+    { label: 'Dinheiro', value: 'dinheiro' },
+  ];
+
+  return (
+    <View style={styles.container}>
+      <RNPickerSelect
+        placeholder={{ label: 'Selecione uma forma de ', value: null }}
+        items={priorityOptions}
+        onValueChange={(value) => setPriority(value)}
+        value={priority}
+      />
+    </View>
+  );
+};
+
+
+
 
 
 function Compra({ navigation, route }) {
@@ -103,6 +128,7 @@ function Compra({ navigation, route }) {
         </Text>
         <Text style={styleprodutos.precoproduto} >{valor}</Text>
         <Text>Método de pagamento:</Text>
+        
         <TextInput
           style={stylelogin.input}
           placeholder="Pix, Cartão ou Dinheiro"
