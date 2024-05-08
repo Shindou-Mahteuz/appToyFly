@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { Text, TouchableOpacity, View, TextInput, Button, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './style/global';
@@ -7,15 +7,73 @@ import stylelogin from './style/stylelogin';
 import Menu from './Menu';
 import Nav from './Nav';
 
-function Login({ navigation }) {
+function Login({ navigation, route }) {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
-
-
   const [id, setId] = useState('');
-  const [imagem, setImagem] = useState('');
+  const [imagem, setImagem] = useState('https://s.alicdn.com/@sc04/kf/Hcd25668e97944d65bdb39c7c67bb759fK.jpg_300x300.jpg');
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    const loadValue = async () => {
+        try {
+            const idV = await AsyncStorage.getItem('id');
+            const imagemV = await AsyncStorage.getItem('imagem');
+            const nomeV = await AsyncStorage.getItem('nome');
+            const emailV = await AsyncStorage.getItem('email');
+            if (idV !== null) {
+                setId(idV);
+            }
+            if (imagemV !== null) {
+                setImagem(imagemV.replace(/"/g, ''));
+            }else{
+                setImagem('https://s.alicdn.com/@sc04/kf/Hcd25668e97944d65bdb39c7c67bb759fK.jpg_300x300.jpg');
+            }
+            if (nomeV !== null) {
+                setNome(nomeV);
+            }
+            if (emailV !== null) {
+                setEmail(emailV);
+            }
+        } catch (error) {
+            console.log('Erro ao carregar valor:', error);
+        }
+    };
+    loadValue();
+}, []);
+
+  /* useEffect(() => {
+     const limparTudo = () => {
+       try {
+         setId('');
+         setImagem('');
+         setNome('');
+         setEmail('');
+         console.log("cachaça")
+       } catch (error) {
+         console.log('Erro ao apagar dados', error);
+       }
+     };
+     limparTudo();
+   }, []);*/
+  /*const loadValue = async () => {
+    try {
+      const idV = await AsyncStorage.getItem('id');
+      const imagemV = await AsyncStorage.getItem('imagem');
+      const nomeV = await AsyncStorage.getItem('nome');
+      const emailV = await AsyncStorage.getItem('email');
+      if (idV !== null && imagemV !== null && nomeV !== null && emailV !== null) {
+        setId(idV);
+        setImagem(imagemV);
+        setNome(nomeV);
+        setEmail(emailV);
+      }
+    } catch (e) {
+      console.error('Erro ao carregar valor:', e);
+    }
+  };*/
+
   autenticar = () => {
     let token = 'Q!W@ee344%%R';
     if (usuario.trim() !== '' && senha.trim() !== '') {
@@ -26,14 +84,28 @@ function Login({ navigation }) {
           if (data == "Nenhum usuário encontrado.null") {
             alert('Nenhum usuário encontrado! \nFaça o cadastro primeiro')
           } else {
-
-            setId(data[0].id);
+            /*if (id !== " " && nome !== " " && imagem !== " " && email !== " ") {
+              setId(null);
+              setImagem(null);
+              setNome(null);
+              setEmail(null);
+            } else {
+              setId(data[0].id);
+              setImagem(data[0].imagem);
+              setNome(data[0].nome);
+              setEmail(data[0].email);
+            }*/
+            /*setId(data[0].id);
             setImagem(data[0].imagem);
             setNome(data[0].nome);
-            setEmail(data[0].email);
-            saveValue();
-            alert('Bem vindo de volta, ' + nome + '\nFaça suas compras!')
-            navigation.navigate('Lista por Idade');
+            setEmail(data[0].email);*/
+            var teste1 = data[0].id;
+            var teste2 = data[0].imagem;
+            var teste3 = data[0].nome;
+            var teste4 = data[0].email;
+            saveValue(teste1, teste2, teste3, teste4);
+            alert('Bem vindo de volta, ' + nome + '\nFaça suas compras!');
+            navigation.navigate('ListaIdade', { imagem, id, nome });
           };
         })
         .catch(error => {
@@ -45,16 +117,33 @@ function Login({ navigation }) {
 
   }
 
-  const saveValue = async () => {
+  /*setId(data[0].id);
+           setImagem(data[0].imagem);
+           setNome(data[0].nome);
+           setEmail(data[0].email);*/
+
+
+
+  const saveValue = async (teste1, teste2, teste3, teste4) => {
     try {
-      await AsyncStorage.setItem('id', JSON.stringify(id));
-      await AsyncStorage.setItem('imagem', JSON.stringify(imagem));
-      await AsyncStorage.setItem('nome', JSON.stringify(nome));
-      await AsyncStorage.setItem('email', JSON.stringify(email));
+      console.log(teste1);
+      console.log(teste2);
+      console.log(teste3);
+      console.log(teste4);
+      await AsyncStorage.setItem('id', JSON.stringify(teste1));
+      await AsyncStorage.setItem('imagem', JSON.stringify(teste2));
+      await AsyncStorage.setItem('nome', JSON.stringify(teste3));
+      await AsyncStorage.setItem('email', JSON.stringify(teste4));
+      /*console.log("não deu errado");
+      console.log(id);
+      console.log(imagem);
+      console.log(nome);
+      console.log(email);*/
     } catch (e) {
       console.error('Erro ao salvar valor:', e);
     }
   };
+  //loadValue();
   /*const [result, setResult] = useState('');
  
   const saveValue = async () => {
@@ -75,9 +164,8 @@ function Login({ navigation }) {
       console.error('Erro ao carregar valor:', e);
     }
   };
- 
-saveValue();*/
 
+saveValue();*/
   return (
     <View style={styles.container}>
       <Nav></Nav>
@@ -85,7 +173,7 @@ saveValue();*/
         <Text style={stylelogin.textmain}>Toy Fly - Seu aplicativo para comprar brinquedos!</Text>
       </View>
       <View style={stylelogin.viewimgmlk}>
-        <Image source={require('./assets/iconursologin.jpg')} style={stylelogin.imgmlk}></Image>
+        <Image source={{ uri: `${imagem}` }} style={stylelogin.imgmlk}></Image>
       </View>
       <View style={stylelogin.form}>
         <Text>Nome de usuário ou email:</Text>

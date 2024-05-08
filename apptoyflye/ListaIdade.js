@@ -27,7 +27,7 @@ function ListaIdade({ navigation }) {
     navigation.navigate('Produtos', { valor });
   };
 
-  const loadValue = async () => {
+  /*const loadValue = async () => {
     try {
       const value = await AsyncStorage.getItem('dados');
       if (value !== null) {
@@ -38,22 +38,8 @@ function ListaIdade({ navigation }) {
       console.error('Erro ao carregar valor:', e);
     }
   };
-
-  /*const [result, setResult] = useState('');
-   
-  const saveValue = async () => {
-    try {
-      await AsyncStorage.setItem('resultA', JSON.stringify(result));
-    } catch (e) {
-      console.error('Erro ao salvar valor:', e);
-    }
-  }; 
-   
-  
-   
-  saveValue();*/
   loadValue();
-  console.log(dados);
+  console.log("oi"+dados);*/
 
   return (
     <View style={styles.container}>

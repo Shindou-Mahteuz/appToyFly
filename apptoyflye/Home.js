@@ -7,29 +7,31 @@ import Menu from './Menu';
 import Nav from './Nav';
 
 function Home({ navigation }) {
-
-  /*const [result, setResult] = useState('');
- 
-  const saveValue = async () => {
+  const [id, setId] = useState('');
+  const [imagem, setImagem] = useState('');
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  /*const loadValue = async () => {
     try {
-      await AsyncStorage.setItem('resultA', JSON.stringify(result));
-    } catch (e) {
-      console.error('Erro ao salvar valor:', e);
-    }
-  }; 
- 
-  const loadValue = async () => {
-    try {
-      const value = await AsyncStorage.getItem('result');
-      if (value !== null) {
-        a = JSON.parse(value);
+      const idV = await AsyncStorage.getItem('id');
+      const imagemV = await AsyncStorage.getItem('imagem');
+      const nomeV = await AsyncStorage.getItem('nome');
+      const emailV = await AsyncStorage.getItem('email');
+      if (idV !== null && imagemV !== null && nomeV !== null && emailV !== null) {
+        setId(idV);
+        setImagem(imagemV);
+        setNome(nomeV);
+        setEmail(emailV);
       }
     } catch (e) {
       console.error('Erro ao carregar valor:', e);
     }
-  };
- 
-saveValue();*/
+  };*/
+ // loadValue();
+  /*console.log(id);
+  console.log(imagem);
+  console.log(nome);
+  console.log(email);*/
 
   return (
     <View style={styles.container}>
@@ -46,7 +48,7 @@ saveValue();*/
         </Text>
       </View>
       <View style={stylehome.viewbutton}>
-        <TouchableOpacity style={stylehome.touchbutton} onPress={() => navigation.navigate('Lista por Idade')}>
+        <TouchableOpacity style={stylehome.touchbutton} onPress={() => navigation.navigate('ListaIdade')}>
           <Text style={stylehome.textbutton}>Começar a comprar!</Text>
         </TouchableOpacity>
       </View>

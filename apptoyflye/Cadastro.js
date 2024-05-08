@@ -22,11 +22,11 @@ function Cadastro({ navigation }) {
           const data = response.data;
           aviso = 0;
           console.log(data);
-          navigation.navigate('Lista por Idade');
+          navigation.navigate('ListaIdade');
         })
         .catch(error => {
           console.log('Erro ao enviar dados:', error);
-          navigation.navigate('Lista por Idade');
+          navigation.navigate('ListaIdade');
         });
       //navigation.navigate('Home');
     } else {

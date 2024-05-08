@@ -7,8 +7,8 @@ export default StyleSheet.create({
         height: '80%',
     },
     viewimgmlk: {
-        position: 'absolute',
-        top: 160,
+        position: 'relative',
+        top: 20,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
@@ -23,8 +23,8 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
     viewtextmain: {
-        position: 'absolute',
-        top: 120,
+        position: 'relative',
+        top: 0,
     },
     textdesc: {
         fontSize: 13,
@@ -34,8 +34,8 @@ export default StyleSheet.create({
     },
     viewtextdesc: {
         width: '80%',
-        position: 'absolute',
-        bottom: 145,
+        position: 'relative',
+        top: 10,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
@@ -45,8 +45,8 @@ export default StyleSheet.create({
         borderWidth: 3,
         borderColor: 'lightgray',
         borderRadius: 20,
-        position: 'absolute',
-        bottom: 170,
+        position: 'relative',
+        bottom: 10,
         width: '50%',
         height: 40,
         justifyContent: 'center',
@@ -66,7 +66,7 @@ export default StyleSheet.create({
     form:{
         width: '60%',
         height: '30%',
-        top: 80,
+        top: 40,
         gap: 5,
     },
     input:{

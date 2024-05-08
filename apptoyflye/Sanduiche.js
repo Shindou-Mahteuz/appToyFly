@@ -10,7 +10,7 @@ import Produtos from './Produtos';
 import Compra from './Compra';
 import Carrinho from './Carrinho';
 import HistoricoCompra from './HistóricoCompra';
-
+import TelaRetorno from './TelaRetorno';
 const Drawer = createDrawerNavigator();
 
 function Sanduiche() {
@@ -31,7 +31,7 @@ function Sanduiche() {
                     }
                     }
                 />
-                <Drawer.Screen name="Lista por Idade" component={ListaIdade} />
+                <Drawer.Screen name="ListaIdade" component={ListaIdade} />
                 <Drawer.Screen name="Produtos" component={Produtos}
                     options={{
                         drawerItemStyle: { display: 'none' }
@@ -39,6 +39,12 @@ function Sanduiche() {
                     }
                 />
                 <Drawer.Screen name="Compra" component={Compra}
+                    options={{
+                        drawerItemStyle: { display: 'none' }
+                    }
+                    }
+                />
+                <Drawer.Screen name="TelaRetorno" component={TelaRetorno}
                     options={{
                         drawerItemStyle: { display: 'none' }
                     }

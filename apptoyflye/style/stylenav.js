@@ -52,8 +52,9 @@ export default StyleSheet.create({
         height: 50,
     },
     logoprofile: {
-        width: '63%',
-        height: '63%',
+        width: '90%',
+        height: '90%',
+        borderRadius: 100,
     },
     viewtextleave: {
         position: 'absolute',
